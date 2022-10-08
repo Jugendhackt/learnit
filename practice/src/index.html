@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- head definitions go here -->
+</head>
+
+<body>
+
+    <form action="http://localhost:3000/upload" method="POST" encType="multipart/form-data">
+
+        <label for="subject_select">Choose a pet:</label>
+        <select name="subject" id="subject-select">
+            <option value="">--Please choose an option--</option>
+            <option value="chemie">Chemie</option>
+            <option value="pyhsik">Physik</option>
+        </select>
+
+        <input name="foo" type="file" />
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
