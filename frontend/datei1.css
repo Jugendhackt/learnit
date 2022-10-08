@@ -6,6 +6,9 @@ body {
 .title {
     text-align: center;
 }
+.mathe{
+	background-color: rgb(119, 119, 187);
+}
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
 	.dropdown-menu li{ position: relative; 	}
