@@ -11,6 +11,8 @@ app.use(fileUpload({
     //tempFileDir: '/tmp/'
 }));
 
+app.use(express.static('files'))
+
 app.post('/upload', function(req, res) {
     console.log(req.files.foo); // the uploaded file object
 
@@ -24,9 +26,12 @@ app.post('/upload', function(req, res) {
 
     });
 
-
-
-    // req.files.foo.name
 });
+
+app.get('/sheets', function(req, res) {
+    my_sql.all_sheets_json("base1.db", (rows) => {
+        res.json(rows)
+    })
+})
 
 app.listen(process.env.port || 3000);

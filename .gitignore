@@ -1,0 +1,7 @@
+/node_modules 
+
+*.ds_store
+
+/backend/node_modules
+
+/practice

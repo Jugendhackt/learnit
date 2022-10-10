@@ -49,15 +49,26 @@ function query_data_sheets(database, id) {
     return db.get(sql, task);
 
 }
+
+function all_sheets_json(database, callback) {
+    var db = new sqlite3.Database(database);
+
+    db.all("SELECT id, title, subject FROM sheets", function(err, rows) {
+        //console.log(row.id + ": " + row.name);
+        console.log(rows)
+        callback(rows)
+
+    });
+}
 //make_database();
-//base = "base1.db"
-//make_table_sheets(base)
-//let new_id
-//insert_data_sheets(base, "Komplexe Zahlen", "Mathematik", (id) => { new_id = id })
-//console.log(new_id)
-//console.log("id: ", id)
-//console.log(query_data_sheets(base, id))
+base = "base1.db"
+    //make_table_sheets(base)
+    //let new_id
+    //insert_data_sheets(base, "Komplexe Zahlen", "Mathematik", (id) => { new_id = id })
+    //console.log(new_id)
+    //console.log("id: ", id)
+    //console.log(query_data_sheets(base, id))
 
 
 
-module.exports = { make_table_sheets, insert_data_sheets, query_data_sheets }
+module.exports = { make_table_sheets, insert_data_sheets, query_data_sheets, all_sheets_json }
